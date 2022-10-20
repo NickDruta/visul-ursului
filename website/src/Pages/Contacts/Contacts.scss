@@ -1,0 +1,63 @@
+.contacts-component {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 50px 178px;
+  height: calc(100vh - 206px - 100px);
+
+  &-left {
+    flex: 1 0 0;
+
+    &-logo {
+      height: 250px;
+
+      svg {
+        width: auto;
+        height: 250px;
+      }
+    }
+  }
+
+  &-right {
+    flex: 1 0 0;
+    text-align: right;
+
+    &-title {
+      font-family: "Kodchasan-bold";
+      font-size: 45px;
+      line-height: 145%;
+      margin-bottom: 48px;
+    }
+
+    &-subtitle {
+      font-family: "Kodchasan-medium";
+      font-size: 24px;
+      line-height: 145%;
+      margin-bottom: 24px;
+    }
+
+    &-container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 16px;
+
+      &-item {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+
+        &-link {
+          font-size: 18px;
+          line-height: 145%;
+          color: #004CBD;
+          cursor: pointer;
+
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+  }
+}

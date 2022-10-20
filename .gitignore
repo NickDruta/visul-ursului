@@ -1,0 +1,16 @@
+.idea/
+*__pycache__
+.DS_STORE
+
+core/env/
+
+core/core/media/*
+
+core/core/core/settings.py
+
+website/node_modules
+
+*swp
+*swo
+
+core/core/.vscode/

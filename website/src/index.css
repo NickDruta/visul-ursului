@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "Kodchasan-regular", sans-serif;
+  font-size: 16px;
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+.container {
+  max-width: 1200px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+@font-face {
+  font-family: "Kodchasan-bold";
+  src: url(./Fonts/Kodchasan-Bold.ttf);
+}
+
+@font-face {
+  font-family: "Kodchasan-bold-italic";
+  src: url(./Fonts/Kodchasan-BoldItalic.ttf);
+}
+
+@font-face {
+  font-family: "Kodchasan-extralight";
+  src: url(./Fonts/Kodchasan-ExtraLight.ttf);
+}
+
+@font-face {
+  font-family: "Kodchasan-extralight-italic";
+  src: url(./Fonts/Kodchasan-ExtraLightItalic.ttf);
+}
+
+@font-face {
+  font-family: "Kodchasan-regular-italic";
+  src: url(./Fonts/Kodchasan-Italic.ttf);
+}
+
+@font-face {
+  font-family: "Kodchasan-light";
+  src: url(./Fonts/Kodchasan-Light.ttf);
+}
+
+@font-face {
+  font-family: "Kodchasan-light-italic";
+  src: url(./Fonts/Kodchasan-LightItalic.ttf);
+}
+
+@font-face {
+  font-family: "Kodchasan-medium";
+  src: url(./Fonts/Kodchasan-Medium.ttf);
+}
+
+@font-face {
+  font-family: "Kodchasan-medium-italic";
+  src: url(./Fonts/Kodchasan-MediumItalic.ttf);
+}
+
+@font-face {
+  font-family: "Kodchasan-regular";
+  src: url(./Fonts/Kodchasan-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Kodchasan-semibold";
+  src: url(./Fonts/Kodchasan-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: "Kodchasan-semibold-italic";
+  src: url(./Fonts/Kodchasan-SemiBoldItalic.ttf);
+}
+
+.unselectable {
+  user-select: none;
+}

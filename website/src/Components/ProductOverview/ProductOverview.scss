@@ -1,0 +1,79 @@
+.product-overview-component {
+  margin-top: 107px;
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 50px;
+
+    &-title {
+      font-family: "Kodchasan-bold";
+      font-size: 45px;
+      line-height: 72px;
+    }
+
+    &-link {
+      font-family: "Kodchasan-bold";
+      font-size: 18px;
+      line-height: 29px;
+      color: #e58211;
+      text-decoration-line: underline;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  .swiper-container {
+    position: relative;
+
+    .arrow-container {
+      background: linear-gradient(76.02deg, #ff9d2d 1.66%, #ffd877 93.21%);
+      width: 30px;
+      height: 30px;
+      border-radius: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 2;
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      &.left {
+        position: absolute;
+        left: 0;
+        top: 55%;
+        margin-left:10px;
+
+        .arrow-left {
+          width: auto;
+          height: 15px;
+        }
+      }
+
+      &.right {
+        position: absolute;
+        right: 0;
+        top: 55%;
+        margin-right: 10px;
+
+        .arrow-right {
+          width: auto;
+          height: 15px;
+        }
+      }
+    }
+
+    .swiper {
+      margin-left: 50px;
+      padding-top: 50px;
+      padding-right: 50px;
+    }
+  }
+}

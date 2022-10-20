@@ -1,0 +1,71 @@
+.header-component {
+  background: linear-gradient(76.02deg, #FF9D2D 1.66%, #FFD877 93.21%);
+  border-radius: 30px;
+  height: 665px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 177px;
+  margin: 0px 50px;
+  gap: 214px;
+
+  &-left {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+
+    &-texts {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      &-item {
+        font-family: "Kodchasan-bold";
+        font-size: 90px;
+        line-height: 110px;
+        color: #0B0B0B;
+        width: fit-content;
+        margin: 0px auto;
+      }
+    }
+
+    &-buttons {
+      display: flex;
+      gap: 30px;
+
+      &-item {
+        padding: 9px 40px;
+        font-family: "Kodchasan-bold";
+        font-size: 18px;
+        line-height: 29px;
+        cursor: pointer;
+        opacity: 100%;
+        border-radius: 5px;
+
+        &:hover {
+          opacity: 70%;
+        }
+
+        &:first-of-type {
+          background-color: #000000;
+          color: #FFFFFF;
+        }
+        
+        &:last-of-type {
+          border: 2px solid #000000;
+          color: #000000;
+        }
+      }
+    }
+  }
+
+  &-right {
+    width: auto;
+    height: 500px;
+
+    &-logo {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

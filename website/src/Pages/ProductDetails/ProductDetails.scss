@@ -1,0 +1,158 @@
+.product-details-component {
+  margin: 100px 50px;
+
+  &-container {
+    display: flex;
+    align-items: center;
+    gap: 20vw;
+
+    &-left {
+      flex: 2 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+
+      &-title {
+        font-family: "Kodchasan-semibold";
+        font-size: 28px;
+        line-height: 140%;
+      }
+
+      &-text {
+        font-family: "Kodchasan-regular";
+        font-size: 22px;
+        line-height: 160%;
+      }
+
+      &-actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        &-decrease {
+          background: #e58211;
+          border-radius: 50px;
+          width: 35px;
+          height: 35px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #fff;
+          cursor: pointer;
+          user-select: none;
+          padding-bottom: 2px;
+
+          &.sold {
+            background: #ff6f95;
+          }
+
+          &.disabled {
+            background-color: #d9d9d9;
+            color: #000;
+            cursor: not-allowed;
+          }
+
+          &:not(.disabled):hover {
+            opacity: 0.8;
+          }
+        }
+
+        &-number {
+          width: 30px;
+          text-align: center;
+        }
+
+        &-increase {
+          background: #e58211;
+          border-radius: 50px;
+          width: 35px;
+          height: 35px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #fff;
+          cursor: pointer;
+          user-select: none;
+          padding-bottom: 2px;
+
+          &.sold {
+            background: #ff6f95;
+          }
+
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+
+        &-input {
+          border: 1px solid #e58211;
+          border-radius: 8px;
+          background-color: #fff;
+          height: 100%;
+          font-family: "Kodchasan-regular";
+          font-size: 18px;
+          line-height: 160%;
+          outline: none;
+          padding: 10px;
+
+          &.sold {
+            border: 1px solid #ff6f95;
+          }
+        }
+
+        &-buy {
+          margin-left: 38px;
+          background: linear-gradient(76.02deg, #ff9d2d 1.66%, #ffd877 93.21%);
+          border-radius: 99px;
+          padding: 10px 30px;
+          font-family: "Kodchasan-bold";
+          font-size: 18px;
+          line-height: 160%;
+          color: #ffffff;
+          cursor: pointer;
+          transition: all 1s;
+
+          &.sold{
+            background: linear-gradient(76.02deg, #f46a8e 1.66%, #fdcad7 93.21%);
+          }
+
+          &.success {
+            background: linear-gradient(76.02deg, #0ba200 1.66%, #48c604 93.21%)
+          }
+
+          &.disabled {
+            background: #d9d9d9;
+            color: #000;
+            cursor: not-allowed;
+          }
+
+          &:not(.disabled):hover {
+            opacity: 0.8;
+          }
+        }
+
+        &-cancel {
+          font-family: "Kodchasan-semibold";
+          font-size: 28px;
+          line-height: 140%;
+          opacity: 0.7;
+          margin-left: 10px;
+          cursor: pointer;
+
+          &:hover {
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+
+    &-right {
+      flex: 1 0 0;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}

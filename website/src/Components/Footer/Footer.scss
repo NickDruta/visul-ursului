@@ -1,0 +1,58 @@
+.footer-component {
+  background: linear-gradient(76.02deg, #ff9d2d 1.66%, #ffd877 93.21%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 37px 70px;
+
+  &-left {
+    flex: 1 0 0;
+    display: flex;
+    align-items: center;
+    gap: 41px;
+
+    &-logo {
+      height: 62px;
+    }
+
+    &-text {
+      font-family: "Kodchasan-medium";
+      font-size: 18px;
+      line-height: 29px;
+      color: rgba(0, 0, 0, 0.8);
+      opacity: 0.7;
+      word-spacing: 1px;
+    }
+  }
+
+  &-center {
+    flex: 1 0 0;
+    display: flex;
+    align-items: center;
+    gap: 19px;
+
+    &-item {
+      font-family: "Kodchasan-medium";
+      font-size: 18px;
+      line-height: 23px;
+      color:rgba(0, 0, 0);
+      white-space: nowrap;
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      &.active {
+        font-family: "Kodchasan-bold";
+      }
+    }
+  }
+
+  &-right {
+    flex: 1 0 0;
+    display: flex;
+    align-items: center;
+    gap: 53px;
+    justify-content: flex-end;
+  }
+}

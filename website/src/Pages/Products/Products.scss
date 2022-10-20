@@ -1,0 +1,22 @@
+.products-component {
+  margin: 70px 178px 0;
+  min-height: calc(100vh - 70px - 136px);
+
+  &-title {
+    margin-bottom: 24px;
+    font-family: "Kodchasan-bold";
+    font-size: 28px;
+    line-height: 160%;
+  }
+
+  &-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px;
+    margin-bottom: 70px;
+  }
+
+  .footer-component {
+    margin-top: auto;
+  }
+}
