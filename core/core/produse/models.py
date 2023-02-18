@@ -15,4 +15,3 @@ class Produs(models.Model):
     price = models.IntegerField()
     isAvailable = models.BooleanField(default=False)
     isHot = models.BooleanField(default=False)
-    weight = models.ManyToManyField(Weight)

@@ -4,5 +4,5 @@ from produse.models import Produs
 
 class ProdusSerializer(serializers.ModelSerializer):
     class Meta:
-        fields = ('id', 'name', 'description', 'image', 'price', 'isAvailable', 'isHot', 'weight')
+        fields = ('id', 'name', 'description', 'image', 'price', 'isAvailable', 'isHot')
         model = Produs
