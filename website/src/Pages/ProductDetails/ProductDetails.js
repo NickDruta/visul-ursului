@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import ProductOverview from '../../Components/ProductOverview/ProductOverview'
-import { useHttp } from '../../Hooks/request'
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import ProductOverview from '../../Components/ProductOverview/ProductOverview';
+import { collection, getDocs, addDoc } from '@firebase/firestore';
+import { firestore } from '../../firebase';
 
 import './ProductDetails.scss'
 
 export default function ProductDetails() {
   let { id } = useParams()
-  const { request } = useHttp()
   const [product, setProduct] = useState({})
   const [number, setNumber] = useState(1)
   const [orderFinished, setOrderFinished] = useState(false)
@@ -15,9 +15,11 @@ export default function ProductDetails() {
   const [finished, setFinished] = useState(false)
 
   const getData = async () => {
-    const data = await request(`/${id}/`);
+    const productsCollection = collection(firestore, 'produse');
+    const productsDoc = await getDocs(productsCollection);
+    const data = productsDoc.docs.map(doc => doc.data());
 
-    setProduct(data)
+    setProduct(data.find((item) => item.id == id))
   }
 
   const increaseCount = () => {
@@ -40,20 +42,21 @@ export default function ProductDetails() {
 
   const sendPhone = async () => {
     if (!phone.length) return
-    const formData = new FormData()
-    formData.append('produs', product.id)
-    formData.append('mobile', phone)
-    formData.append('cantitate', number)
-    if (product.isAvailable) {
-      formData.append('anunta', false)
-    } else {
-      formData.append('anunta', true)
+    try {
+      const docRef = await addDoc(collection(firestore, "clienti"), {
+        produs: product.id,
+        mobile: phone,
+        cantitate: number,
+        anunta: !product.isAvailable,
+      })
+      console.log("ID: ", docRef.id);
+    } catch (err) {
+      console.log(err)
     }
-    request('/clienti/', "POST", formData)
     setPhone("")
     setOrderFinished(false)
     setFinished(true)
-
+    
     setTimeout(() => {
       setFinished(false)
     }, 2000)

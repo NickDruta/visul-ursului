@@ -36,8 +36,12 @@ export default function Footer() {
         </div>
       </div>
       <div className="footer-component-right">
-        <SVG Url={Images.phone} className="footer-component-right-item" />
-        <SVG Url={Images.facebook} className="footer-component-right-item" />
+        <a href="tel:069372401">
+          <SVG Url={Images.phone} className="footer-component-right-item" />
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=100086489187059&mibextid=LQQJ4d">
+          <SVG Url={Images.facebook} className="footer-component-right-item" />
+        </a>
       </div>
     </div>
   )

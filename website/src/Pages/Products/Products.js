@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { useHttp } from '../../Hooks/request'
+import { collection, getDocs } from '@firebase/firestore';
+import { firestore } from '../../firebase';
 
 import Product from '../../Components/Product/Product'
 import ProductHot from '../../Components/ProductHot/ProductHot'
@@ -9,12 +10,13 @@ import './Products.scss'
 
 export default function Products() {
   const [products, setProducts] = useState([])
-  const { request } = useHttp()
 
   const getData = async () => {
-    const data = await request('/')
+    const productsCollection = collection(firestore, 'produse');
+    const productsDoc = await getDocs(productsCollection);
+    const data = productsDoc.docs.map(doc => doc.data());
 
-    setProducts(data)
+    setProducts([...data]);
   }
 
   useEffect(() => {

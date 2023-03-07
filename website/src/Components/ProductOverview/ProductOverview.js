@@ -4,6 +4,8 @@ import { Navigation, Autoplay } from 'swiper';
 import { SVG } from '../SVG/SVG';
 import { Images } from '../../Themes/Images';
 import { Link } from 'react-router-dom';
+import { collection, getDocs } from '@firebase/firestore';
+import { firestore } from '../../firebase';
 
 import Product from '../../Components/Product/Product';
 import ProductHot from '../../Components/ProductHot/ProductHot';
@@ -11,17 +13,18 @@ import ProductSold from '../../Components/ProductSold/ProductSold';
 
 import './ProductOverview.scss';
 import 'swiper/css';
-import { useHttp } from '../../Hooks/request';
 
 export default function ProductOverview() {
   const [products, setProducts] = useState([])
   const prevRef = useRef(null);
   const nextRef = useRef(null);
-  const { request } = useHttp();
 
   const getData = async () => {
-    const data = await request('/')
-    setProducts(data)
+    const productsCollection = collection(firestore, 'produse');
+    const productsDoc = await getDocs(productsCollection);
+    const data = productsDoc.docs.map(doc => doc.data());
+
+    setProducts([...data]);
   }
 
   useEffect(() => {
