@@ -1,10 +1,18 @@
 .product-details-component {
   margin: 100px 50px;
 
+  @media screen and (max-width: 500px) {
+    margin: 50px 20px;
+  }
+
   &-container {
     display: flex;
     align-items: center;
-    gap: 20vw;
+
+    @media screen and (max-width: 500px) {
+      flex-direction: column;
+      gap: 10px;
+    }
 
     &-left {
       flex: 2 0 0;
@@ -12,16 +20,31 @@
       flex-direction: column;
       gap: 48px;
 
+      @media screen and (max-width: 500px) {
+        flex: unset;
+        gap: 12px;
+      }
+
       &-title {
         font-family: "Kodchasan-semibold";
         font-size: 28px;
         line-height: 140%;
+
+        @media screen and (max-width: 500px) {
+          font-size: 18px;
+          line-height: 32px;
+        }
       }
 
       &-text {
         font-family: "Kodchasan-regular";
         font-size: 22px;
         line-height: 160%;
+
+        @media screen and (max-width: 500px) {
+          font-size: 16px;
+          line-height: 22px;
+        }
       }
 
       &-actions {
@@ -42,6 +65,11 @@
           user-select: none;
           padding-bottom: 2px;
 
+          @media screen and (max-width: 500px) {
+            width: 30px;
+            height: 30px;
+          }
+
           &.sold {
             background: #ff6f95;
           }
@@ -60,6 +88,10 @@
         &-number {
           width: 30px;
           text-align: center;
+
+          @media screen and (max-width: 500px) {
+            width: 15px;
+          }
         }
 
         &-increase {
@@ -74,6 +106,11 @@
           cursor: pointer;
           user-select: none;
           padding-bottom: 2px;
+
+          @media screen and (max-width: 500px) {
+            width: 30px;
+            height: 30px;
+          }
 
           &.sold {
             background: #ff6f95;
@@ -95,6 +132,13 @@
           outline: none;
           padding: 10px;
 
+          @media screen and (max-width: 500px) {
+            width: calc(100vw - 40px - 140px);
+            padding: 5px;
+            font-size: 14px;
+            line-height: 10px;
+          }
+
           &.sold {
             border: 1px solid #ff6f95;
           }
@@ -111,6 +155,13 @@
           color: #ffffff;
           cursor: pointer;
           transition: all 1s;
+
+          @media screen and (max-width: 500px) {
+            padding: 10px 20px;
+            font-size: 14px;
+            line-height: 12px;
+            margin-left: 10px;
+          }
 
           &.sold{
             background: linear-gradient(76.02deg, #f46a8e 1.66%, #fdcad7 93.21%);
@@ -153,6 +204,16 @@
         width: 100%;
         height: auto;
       }
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .product-overview-component-header {
+      margin: 0;
+    }
+
+    .product-overview-component .swiper-container .swiper {
+      margin-left: 0;
     }
   }
 }

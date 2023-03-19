@@ -48,6 +48,7 @@ export default function ProductDetails() {
         mobile: phone,
         cantitate: number,
         anunta: !product.isAvailable,
+        data: new Date(),
       })
       console.log("ID: ", docRef.id);
     } catch (err) {
@@ -115,6 +116,7 @@ export default function ProductDetails() {
                 <input
                   type="text"
                   className={`product-details-component-container-left-actions-input ${!product.isAvailable && "sold"}`}
+                  placeholder="Introdu numărul de telefon"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                 />

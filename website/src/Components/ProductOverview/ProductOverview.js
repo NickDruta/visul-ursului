@@ -1,4 +1,5 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState, useRef } from 'react';
+import { useMediaQuery } from 'react-responsive'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper';
 import { SVG } from '../SVG/SVG';
@@ -18,6 +19,7 @@ export default function ProductOverview() {
   const [products, setProducts] = useState([])
   const prevRef = useRef(null);
   const nextRef = useRef(null);
+  const isMobile = useMediaQuery({ query: '(max-width: 500px)' })
 
   const getData = async () => {
     const productsCollection = collection(firestore, 'produse');
@@ -61,7 +63,7 @@ export default function ProductOverview() {
             disableOnInteraction: false,
           }}
           spaceBetween={50}
-          slidesPerView={2}
+          slidesPerView={isMobile ? 1 : 2}
           loop={true}
           onSlideChange={() => console.log('slide change')}
           onSwiper={(swiper) => console.log(swiper)}

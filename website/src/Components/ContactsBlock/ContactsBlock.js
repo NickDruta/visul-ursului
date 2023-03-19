@@ -21,9 +21,11 @@ export default function ContactsBlock() {
         <div className="contacts-block-component-right-text">
           Pentru a afla mai multe detalii sau a face cunoștință cu calitatea noastră, puteți să ne apelați.
         </div>
-        <Link className="contacts-block-component-right-button" to='/contacte'>
-          Mai mult
-        </Link>
+        <div className="contacts-block-component-right-button-container">
+          <Link className="contacts-block-component-right-button" to='/contacte'>
+            Mai mult
+          </Link>
+        </div>
       </div>
     </div>
   )
