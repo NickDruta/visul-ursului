@@ -42,66 +42,67 @@ ul {
   list-style-type: none;
 }
 
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+}
+
 @font-face {
   font-family: "Kodchasan-bold";
-  src: url(./Fonts/Kodchasan-Bold.ttf);
+  src: url(./assets/fonts/Kodchasan-Bold.ttf);
 }
 
 @font-face {
   font-family: "Kodchasan-bold-italic";
-  src: url(./Fonts/Kodchasan-BoldItalic.ttf);
+  src: url(./assets/fonts/Kodchasan-BoldItalic.ttf);
 }
 
 @font-face {
   font-family: "Kodchasan-extralight";
-  src: url(./Fonts/Kodchasan-ExtraLight.ttf);
+  src: url(./assets/fonts/Kodchasan-ExtraLight.ttf);
 }
 
 @font-face {
   font-family: "Kodchasan-extralight-italic";
-  src: url(./Fonts/Kodchasan-ExtraLightItalic.ttf);
+  src: url(./assets/fonts/Kodchasan-ExtraLightItalic.ttf);
 }
 
 @font-face {
   font-family: "Kodchasan-regular-italic";
-  src: url(./Fonts/Kodchasan-Italic.ttf);
+  src: url(./assets/fonts/Kodchasan-Italic.ttf);
 }
 
 @font-face {
   font-family: "Kodchasan-light";
-  src: url(./Fonts/Kodchasan-Light.ttf);
+  src: url(./assets/fonts/Kodchasan-Light.ttf);
 }
 
 @font-face {
   font-family: "Kodchasan-light-italic";
-  src: url(./Fonts/Kodchasan-LightItalic.ttf);
+  src: url(./assets/fonts/Kodchasan-LightItalic.ttf);
 }
 
 @font-face {
   font-family: "Kodchasan-medium";
-  src: url(./Fonts/Kodchasan-Medium.ttf);
+  src: url(./assets/fonts/Kodchasan-Medium.ttf);
 }
 
 @font-face {
   font-family: "Kodchasan-medium-italic";
-  src: url(./Fonts/Kodchasan-MediumItalic.ttf);
+  src: url(./assets/fonts/Kodchasan-MediumItalic.ttf);
 }
 
 @font-face {
   font-family: "Kodchasan-regular";
-  src: url(./Fonts/Kodchasan-Regular.ttf);
+  src: url(./assets/fonts/Kodchasan-Regular.ttf);
 }
 
 @font-face {
   font-family: "Kodchasan-semibold";
-  src: url(./Fonts/Kodchasan-SemiBold.ttf);
+  src: url(./assets/fonts/Kodchasan-SemiBold.ttf);
 }
 
 @font-face {
   font-family: "Kodchasan-semibold-italic";
-  src: url(./Fonts/Kodchasan-SemiBoldItalic.ttf);
-}
-
-.unselectable {
-  user-select: none;
+  src: url(./assets/fonts/Kodchasan-SemiBoldItalic.ttf);
 }

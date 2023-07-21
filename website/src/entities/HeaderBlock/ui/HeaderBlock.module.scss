@@ -1,0 +1,110 @@
+.headerBlockWrapper {
+  background: linear-gradient(76.02deg, #ff9d2d 1.66%, #ffd877 93.21%);
+  border-radius: 30px;
+  height: 665px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 177px;
+  margin: 0px 50px;
+  gap: 214px;
+
+  @media screen and (max-width: 1300px) {
+    padding: 0px 50px;
+    gap: 100px;
+  }
+
+  @media screen and (max-width: 500px) {
+    padding: 0px 20px;
+    margin: 0px 20px;
+    gap: 20px;
+    height: 400px;
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+}
+
+.leftContentWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+
+  @media screen and (max-width: 500px) {
+    gap: 20px;
+  }
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.descriptionPart {
+  font-family: "Kodchasan-bold";
+  font-size: 90px;
+  line-height: 110px;
+  color: #0b0b0b;
+  width: fit-content;
+  margin: 0px auto;
+
+  @media screen and (max-width: 500px) {
+    font-size: 32px;
+    line-height: 28px;
+  }
+}
+
+.actionButtonsWrapper {
+  display: flex;
+  gap: 30px;
+
+  @media screen and (max-width: 500px) {
+    gap: 15px;
+  }
+}
+
+.actionButton {
+  padding: 9px 40px;
+  font-family: "Kodchasan-bold";
+  font-size: 18px;
+  line-height: 29px;
+  cursor: pointer;
+  opacity: 100%;
+  border-radius: 5px;
+
+  @media screen and (max-width: 1300px) {
+    padding: 9px 30px;
+  }
+
+  @media screen and (max-width: 500px) {
+    padding: 4px 20px;
+  }
+
+  &:hover {
+    opacity: 70%;
+  }
+
+  &:first-of-type {
+    background-color: #000000;
+    color: #ffffff;
+  }
+
+  &:last-of-type {
+    border: 2px solid #000000;
+    color: #000000;
+  }
+}
+
+.rightContentWrapper {
+  width: auto;
+  height: 500px;
+
+  @media screen and (max-width: 500px) {
+    height: 120px;
+  }
+}
+
+.logoIcon {
+  width: 100%;
+  height: 100%;
+}

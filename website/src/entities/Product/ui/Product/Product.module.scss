@@ -1,0 +1,91 @@
+.productWrapper {
+  background: rgba(229, 130, 17, 0.1);
+  padding: 47px 32px;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  border-radius: 15px;
+  color: #000000;
+
+  @media screen and (max-width: 500px) {
+    padding: 20px 18px;
+    gap: 15px;
+  }
+}
+
+.leftContentWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  flex: 2 0 0;
+
+  @media screen and (max-width: 500px) {
+    flex: 1 0 0;
+    gap: 10px;
+  }
+}
+
+.title {
+  font-family: "Kodchasan-semibold";
+  font-size: 28px;
+  line-height: 39px;
+
+  @media screen and (max-width: 500px) {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+
+.description {
+  font-family: "Kodchasan-semibold";
+  font-size: 16px;
+  opacity: 0.7;
+  margin-bottom: 10px;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow: hidden;
+  max-height: 4.8em;
+  line-height: 1.6em;
+  width: 100%;
+
+  @media screen and (max-width: 500px) {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+}
+.actionButton {
+  border: 1.5px solid #e58211;
+  padding: 5px 30px;
+  width: fit-content;
+  font-family: "Kodchasan-bold";
+  font-size: 18px;
+  line-height: 29px;
+  color: #e58211;
+  border-radius: 5px;
+  cursor: pointer;
+
+  @media screen and (max-width: 500px) {
+    padding: 5px 15px;
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.rightContentWrapper {
+  width: 100%;
+  height: 100%;
+  flex: 1 0 0;
+}
+
+.imageWrapper {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

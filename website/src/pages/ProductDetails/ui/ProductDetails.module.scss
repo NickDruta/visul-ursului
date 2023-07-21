@@ -1,0 +1,202 @@
+.pageWrapper {
+  margin: 100px 50px;
+
+  @media screen and (max-width: 500px) {
+    margin: 50px 20px;
+  }
+}
+
+.productDetailsWrapper {
+  display: flex;
+  align-items: center;
+
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.leftContent {
+  flex: 2 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+
+  @media screen and (max-width: 500px) {
+    flex: unset;
+    gap: 12px;
+  }
+}
+
+.title {
+  font-family: "Kodchasan-semibold";
+  font-size: 28px;
+  line-height: 140%;
+
+  @media screen and (max-width: 500px) {
+    font-size: 18px;
+    line-height: 32px;
+  }
+}
+
+.description {
+  font-family: "Kodchasan-regular";
+  font-size: 22px;
+  line-height: 160%;
+
+  @media screen and (max-width: 500px) {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+.actionButtons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.decrease {
+  background: #e58211;
+  border-radius: 50px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+  padding-bottom: 2px;
+
+  @media screen and (max-width: 500px) {
+    width: 30px;
+    height: 30px;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+.soldStatus {
+  background: #ff6f95;
+}
+
+.disabledStatus {
+  background-color: #d9d9d9;
+  color: #000;
+  cursor: not-allowed;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.cantity {
+  width: 30px;
+  text-align: center;
+
+  @media screen and (max-width: 500px) {
+    width: 15px;
+  }
+}
+
+.increase {
+  background: #e58211;
+  border-radius: 50px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+  padding-bottom: 2px;
+
+  @media screen and (max-width: 500px) {
+    width: 30px;
+    height: 30px;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.input {
+  border: 1px solid #e58211;
+  border-radius: 8px;
+  background-color: #fff;
+  height: 100%;
+  font-family: "Kodchasan-regular";
+  font-size: 18px;
+  line-height: 160%;
+  outline: none;
+  padding: 10px;
+
+  @media screen and (max-width: 500px) {
+    width: calc(100vw - 40px - 140px);
+    padding: 5px;
+    font-size: 14px;
+    line-height: 10px;
+  }
+}
+
+.inputSoldStatus {
+  border: 1px solid #ff6f95;
+}
+
+.buy {
+  margin-left: 38px;
+  background: linear-gradient(76.02deg, #ff9d2d 1.66%, #ffd877 93.21%);
+  border-radius: 99px;
+  padding: 10px 30px;
+  font-family: "Kodchasan-bold";
+  font-size: 18px;
+  line-height: 160%;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 1s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  @media screen and (max-width: 500px) {
+    padding: 10px 20px;
+    font-size: 14px;
+    line-height: 12px;
+    margin-left: 10px;
+  }
+}
+
+.buySoldStatus {
+  background: linear-gradient(76.02deg, #f46a8e 1.66%, #fdcad7 93.21%);
+}
+
+.buySuccessStatus {
+  background: linear-gradient(76.02deg, #0ba200 1.66%, #48c604 93.21%);
+}
+
+.cancel {
+  font-family: "Kodchasan-semibold";
+  font-size: 28px;
+  line-height: 140%;
+  opacity: 0.7;
+  margin-left: 10px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+.rightContent {
+  flex: 1 0 0;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}

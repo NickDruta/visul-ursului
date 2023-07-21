@@ -1,0 +1,37 @@
+.productsWrapper {
+  margin: 70px 178px 0;
+  min-height: calc(100vh - 70px - 136px);
+
+  @media screen and (max-width: 500px) {
+    margin: 50px 20px;
+  }
+}
+
+.title {
+  margin-bottom: 24px;
+  font-family: "Kodchasan-bold";
+  font-size: 28px;
+  line-height: 160%;
+
+  @media screen and (max-width: 500px) {
+    font-size: 18px;
+    line-height: 36px;
+    margin-bottom: 12px;
+  }
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 48px;
+  margin-bottom: 70px;
+
+  @media screen and (max-width: 500px) {
+    gap: 24px;
+    grid-template-columns: 1fr;
+  }
+}
+
+.footer-component {
+  margin-top: auto;
+}

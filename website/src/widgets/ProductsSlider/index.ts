@@ -1,0 +1,1 @@
+export { default as ProductsSlider } from './ui/ProductsSlider'; 
