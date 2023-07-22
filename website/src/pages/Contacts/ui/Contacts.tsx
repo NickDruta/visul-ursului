@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { facebookIcon, logoIcon, phoneIcon } from "assets";
+import { facebookIcon, instagramIcon, logoIcon, phoneIcon } from "assets";
 import cls from "./Contacts.module.scss";
 
 const Contacts = () => {
@@ -51,6 +51,20 @@ const Contacts = () => {
               target="_blank"
               rel="noreferrer"
               href="https://www.facebook.com/people/Visul-Ursului/100086489187059/"
+            >
+              Vizualizează
+            </a>
+            <div>Visul Ursului S.R.L.</div>
+          </div>
+          <div className={cls.item}>
+            <div className={cls.image}>
+              <img src={instagramIcon} alt="" />
+            </div>
+            <a
+              className={cls.link}
+              target="_blank"
+              rel="noreferrer"
+              href="https://www.instagram.com/visul.ursului/"
             >
               Vizualizează
             </a>

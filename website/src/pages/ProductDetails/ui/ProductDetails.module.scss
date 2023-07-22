@@ -1,5 +1,6 @@
 .pageWrapper {
   margin: 100px 50px;
+  overflow-x: hidden;
 
   @media screen and (max-width: 500px) {
     margin: 50px 20px;
@@ -86,6 +87,12 @@
   @media screen and (max-width: 500px) {
     width: 15px;
   }
+}
+
+.price {
+  font-family: "Kodchasan-bold";
+  font-size: 20px;
+  margin-left: 10px
 }
 
 .increase {

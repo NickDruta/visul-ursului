@@ -124,6 +124,9 @@ const ProductDetails = () => {
                   ? "Cumpără"
                   : "Anunță-mă"}
               </div>
+              <div className={cls.price}>{`${
+                product ? number * product.price : 0
+              } lei`}</div>
             </div>
           ) : (
             <div className={cls.actionButtons}>
@@ -160,6 +163,6 @@ const ProductDetails = () => {
       <ProductsSlider />
     </div>
   );
-}
+};
 
 export default ProductDetails;
