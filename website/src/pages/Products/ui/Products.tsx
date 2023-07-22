@@ -17,7 +17,6 @@ const Products = () => {
     const productsDoc = await getDocs(productsCollection);
     const data = productsDoc.docs.map((doc) => {
       const productData = doc.data() as ProductRecord;
-      productData.id = doc.id;
       return productData;
     });
     setProducts(data);

@@ -18,13 +18,13 @@ const ProductsSlider = () => {
   const isMobile = window.matchMedia("(max-width: 500px)").matches;
   const sliderRef = useRef<HTMLDivElement | null>(null);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const touchStartRef = useRef<number | null>(null);
 
   const getData = async () => {
     const productsCollection = collection(firestore, "produse");
     const productsDoc = await getDocs(productsCollection);
     const data = productsDoc.docs.map((doc) => {
       const productData = doc.data() as ProductRecord;
-      productData.id = doc.id;
       return productData;
     });
     setProducts(data);
@@ -58,20 +58,66 @@ const ProductsSlider = () => {
   };
 
   const goToPrevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === 0 ? products.length - 1 : prevIndex - 1));
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? products.length - 1 : prevIndex - 1
+    );
   };
 
   const goToNextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === products.length - 2 ? 0 : prevIndex + 1));
+    setCurrentIndex((prevIndex) =>
+      prevIndex === products.length - (isMobile ? 1 : 2) ? 0 : prevIndex + 1
+    );
   };
 
   useEffect(() => {
     const slidesPerView = isMobile ? 1 : 2;
-    sliderRef.current!.style.transform = `translateX(-${currentIndex * (100 / slidesPerView)}%)`;
+    sliderRef.current!.style.transform = `translateX(-${
+      currentIndex * (100 / slidesPerView)
+    }%)`;
   }, [currentIndex, isMobile]);
 
+  const handleTouchStart = (event: React.TouchEvent) => {
+    touchStartRef.current = event.touches[0].clientX;
+    stopAutoplay();
+  };
+
+  const handleTouchMove = (event: React.TouchEvent) => {
+    if (touchStartRef.current !== null) {
+      const touchMoveX = event.touches[0].clientX;
+      const touchDeltaX = touchMoveX - touchStartRef.current;
+
+      const slidesPerView = isMobile ? 1 : 2;
+      const slideWidth = 100 / slidesPerView;
+      const slideOffset = currentIndex * slideWidth;
+
+      sliderRef.current!.style.transform = `translateX(-${
+        slideOffset +
+        (touchDeltaX / sliderRef.current!.clientWidth) * slideWidth
+      }%)`;
+    }
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStartRef.current !== null) {
+      const touchMoveX = touchStartRef.current;
+      const touchEndX = touchMoveX - sliderRef.current!.clientWidth / 4;
+      if (touchMoveX > touchEndX) {
+        goToNextSlide();
+      } else if (touchMoveX < touchEndX) {
+        goToPrevSlide();
+      }
+      touchStartRef.current = null;
+      startAutoplay();
+    }
+  };
+
   return (
-    <div className={cls.productsSliderWrapper}>
+    <div
+      className={cls.productsSliderWrapper}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
       <div className={cls.headerWrapper}>
         <div className={cls.title}>Produsele noastre</div>
         <Link className={cls.linkAction} to="/produse">
@@ -79,10 +125,16 @@ const ProductsSlider = () => {
         </Link>
       </div>
       <div className={cls.sliderContainer}>
-        <div className={clsx(cls.arrowWrapper, cls.leftArrow)} onClick={goToPrevSlide}>
+        <div
+          className={clsx(cls.arrowWrapper, cls.leftArrow)}
+          onClick={goToPrevSlide}
+        >
           <img src={arrowLeftIcon} alt="" />
         </div>
-        <div className={clsx(cls.arrowWrapper, cls.rightArrow)} onClick={goToNextSlide}>
+        <div
+          className={clsx(cls.arrowWrapper, cls.rightArrow)}
+          onClick={goToNextSlide}
+        >
           <img src={arrowRightIcon} alt="" />
         </div>
         <div className={cls.swiper} ref={sliderRef}>

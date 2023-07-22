@@ -3,6 +3,7 @@ import { BrowserRouter } from "react-router-dom";
 import { NavBar } from "features/NavBar";
 import { Footer } from "features/Footer";
 import { useRoutes } from "shared/hooks";
+import cls from "./App.module.scss";
 
 function App() {
   const routes = useRoutes();
@@ -12,13 +13,13 @@ function App() {
   }, [window.location.pathname]);
 
   return (
-    <div className="App">
-      <BrowserRouter>
+    <BrowserRouter>
+      <div className={cls.appWrapper}>
         <NavBar />
-        {routes}
+        <div className={cls.mainWrapper}>{routes}</div>
         <Footer />
-      </BrowserRouter>
-    </div>
+      </div>
+    </BrowserRouter>
   );
 }
 

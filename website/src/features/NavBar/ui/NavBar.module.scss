@@ -2,14 +2,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 19px 178px;
+  padding: 19px 178px;
 
   @media screen and (max-width: 1024px) {
-    margin: 19px auto;
+    padding: 19px 0;
+    margin: 0 auto
   }
 
   @media screen and (max-width: 500px) {
-    margin: 12px 20px;
+    padding: 12px 20px;
   }
 }
 

@@ -21,7 +21,7 @@ const ProductDetails = () => {
     const data: ProductRecord[] = productsDoc.docs.map(
       (doc) => doc.data() as ProductRecord
     );
-    const filteredData = data.find((item) => item.id === id);
+    const filteredData = data.find((item) => String(item.id) === id);
 
     setProduct(filteredData ? filteredData : null);
   };
