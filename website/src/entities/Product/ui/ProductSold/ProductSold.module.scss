@@ -2,11 +2,11 @@
   background: linear-gradient(76.02deg, #f46a8e 1.66%, #fdcad7 93.21%);
   border: 1px solid #ff6f95;
   padding: 47px 32px;
-  width: 50%;
   display: flex;
   align-items: center;
   gap: 30px;
   width: 100%;
+  max-height: 304px;
   position: relative;
   border-radius: 15px;
 
@@ -20,6 +20,7 @@
   position: absolute;
   top: -48px;
   right: -48px;
+  z-index: 2;
 
   @media screen and (max-width: 500px) {
     top: -40px;

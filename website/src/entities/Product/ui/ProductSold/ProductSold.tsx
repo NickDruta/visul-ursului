@@ -3,14 +3,16 @@ import { Link } from "react-router-dom";
 import { soldIcon } from "assets";
 import { ProductRecord } from "entities/Product";
 import cls from "./ProductSold.module.scss";
+import clsx from "clsx";
 
 interface Props {
   product: ProductRecord;
+  className?: string;
 }
 
-const ProductSold = ({ product }: Props) => {
+const ProductSold = ({ product, className }: Props) => {
   return (
-    <Link className={cls.productSoldWrapper} to={`/produse/${product.id}`}>
+    <Link className={clsx(cls.productSoldWrapper, className)} to={`/produse/${product.id}`}>
       <img src={soldIcon} alt="" className={cls.iconWrapper} />
       <div className={cls.leftContentWrapper}>
         <div className={cls.title}>{product.name}</div>
